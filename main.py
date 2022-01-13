@@ -4,14 +4,21 @@ import pickle  # for store and retrieve data on disk
 import random  # from generating random number
 
 from plyer import notification  # for displaying notification
+from pathlib import Path  # for p operations
+
+# getting current path of program
+p = __file__
+p = str(p)
+p = p.replace("/main.py", "")
+print(p)
 
 # restoring random state
-rF = open("random", "rb")
+rF = open(p + "/random", "rb")
 rState = pickle.load(rF) 
 random.setstate(rState)
 
 # opening file in read mode to get words
-f = open("words.json", "r")
+f = open(p + "/words.json", "r")
 
 # loading json from file
 vocabulary_words = json.load(f)["data"]
@@ -28,6 +35,6 @@ notification.notify(
     message="Meaning : " + word["detail"])
 
 # saving random state
-rF = open("random", "wb")
+rF = open(p + "/random", "wb")
 rState = random.getstate()
 pickle.dump(rState, rF)
