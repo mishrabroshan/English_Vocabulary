@@ -3,3 +3,5 @@ A simple program displays system notification for random vocabulary words with m
 
 ![Sample 1](https://raw.githubusercontent.com/mishrabroshan/English_Vocabulary/main/sample/sample1.png) 
 ![Sample 2](https://raw.githubusercontent.com/mishrabroshan/English_Vocabulary/main/sample/sample2.png)
+
+## Automate The Job
