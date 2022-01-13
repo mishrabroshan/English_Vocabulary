@@ -5,20 +5,25 @@ import random  # from generating random number
 
 from plyer import notification  # for displaying notification
 from pathlib import Path  # for p operations
+from sys import platform  # for checking system
 
 # getting current path of program
 p = __file__
 p = str(p)
-p = p.replace("/main.py", "")
+if platform == "linux" or platform == "linux2":
+    p = p.replace("/main.py", "/")
+else:
+    p = p.replace("\\main.py", "\\")
+    
 print(p)
 
 # restoring random state
-rF = open(p + "/random", "rb")
+rF = open(p + "random", "rb")
 rState = pickle.load(rF) 
 random.setstate(rState)
 
 # opening file in read mode to get words
-f = open(p + "/words.json", "r")
+f = open(p + "words.json", "r")
 
 # loading json from file
 vocabulary_words = json.load(f)["data"]
@@ -35,6 +40,6 @@ notification.notify(
     message="Meaning : " + word["detail"])
 
 # saving random state
-rF = open(p + "/random", "wb")
+rF = open(p + "random", "wb")
 rState = random.getstate()
 pickle.dump(rState, rF)
