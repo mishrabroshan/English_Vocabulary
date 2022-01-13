@@ -12,5 +12,3 @@ Use [Crontab](https://www.tutorialspoint.com/unix_commands/crontab.htm) to Autom
 ### For Windows
 
 User [Windows Task Scheduler](https://www.windowscentral.com/how-create-automated-task-using-task-scheduler-windows-10) to Automate the process
-
-### For Mac
