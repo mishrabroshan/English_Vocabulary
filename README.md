@@ -6,7 +6,7 @@ A simple program displays system notification for random vocabulary words with m
 
 ## How To Automate The Program
 
-### For Linux and Mac
+### For Linux 
 Use [Crontab](https://www.tutorialspoint.com/unix_commands/crontab.htm) to Automate the process
 
 ### For Windows
